@@ -1,9 +1,9 @@
 const data = [
-    { id: 1, name: "Product 1", price: "$10", image: "path/to/image1.png" },
-    { id: 2, name: "Product 2", price: "$15", image: "path/to/image2.png" },
-    { id: 3, name: "Product 3", price: "$20", image: "path/to/image3.png" },
-    { id: 4, name: "Product 4", price: "$25", image: "path/to/image4.png" },
-    { id: 5, name: "Product 5", price: "$30", image: "path/to/image5.png" },
+    { id: 1, name: "Product 1", price: "$10", image: '../Images/menitem3.jpg' },
+    { id: 2, name: "Product 2", price: "$15", image: "../Images/menitem10.jpg" },
+    { id: 3, name: "Product 3", price: "$20", image: "../Images/womenitem1.jpg" },
+    { id: 4, name: "Product 4", price: "$25", image: "../Images/womenitem5.jpg" },
+    { id: 5, name: "Product 5", price: "$30", image: "../Images/womenitem9.jpg" },
 ];
 
 console.log(data)
