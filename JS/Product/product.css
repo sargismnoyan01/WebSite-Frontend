@@ -1,0 +1,30 @@
+.product {
+    text-align: center;
+}
+
+.product-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    width: 150px;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-card h2 {
+    font-size: 1.2em;
+}
+
+.product-card p {
+    font-size: 1em;
+}
