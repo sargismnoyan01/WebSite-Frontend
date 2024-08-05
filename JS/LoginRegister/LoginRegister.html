@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./LoginRegister.css">
+    <title>Registration</title>
+</head>
+<body>
+        <div class="container">
+            <div class="header">
+                <div class="text" id="formTitle">Sign In</div>
+                <div class="underline"></div>
+            </div>
+            <form id="registrationForm" class="inputs">
+                <div class="input">
+                    <img src="../Images/user-icon.png" alt="User Icon" />
+                    <input type="text" id="username" placeholder="Username" required />
+                </div>
+                <div class="input" id="emailContainer" style="display: none;">
+                    <img src="../Images/email.png" alt="Email Icon" />
+                    <input type="email" id="email" placeholder="Email" />
+                </div>
+                <div class="input">
+                    <img src="../Images/password.png" alt="Password Icon" />
+                    <input type="password" id="password" placeholder="Password" required />
+                </div>
+                <div id="forgetPassword" style="display: none;">Lost Password? <span>Click here!</span></div>
+                <button type="submit" class="submit-container">
+                    <div class="submit-button" id="submitButton">Login</div>
+                </button>
+                <p id="message"></p>
+            </form>
+            <div class="switch-action">
+                <p id="signInAction" class="submit blue">Sign In</p>
+                <p id="signUpAction" class="submit">Sign Up</p>
+            </div>
+        </div>
+    
+
+    <script src="./LoginRegister.js"></script>
+</body>
+</html>

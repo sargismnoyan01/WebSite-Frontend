@@ -23,3 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     cartCount.textContent = "0"; 
 });
+
+// document.getElementById('login-button').addEventListener('click', () => {
+//     window.location.href = '../LoginRegister/LoginRegister.html'; // Replace with your target page URL
+// });
