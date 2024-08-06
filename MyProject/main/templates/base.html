@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Navbar.css' %}">
+    <title>Navbar</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-up">
+            <a style="text-decoration: none;" href="{% url 'home'%}"><h1 style="text-decoration: none; color: white;"> HayClick</h1></a>
+            <ul class="nav-menu">
+                <li style="text-decoration: none; color: white;">  New In </li>
+                <li style="text-decoration: none; color: white;"> Stores </li>
+                    <li style="text-decoration: none; color: white;"> Our Mission </li>
+                <li style="text-decoration: none; color: white;"> Settings </li>
+            </ul>
+            <div class="nav-login-cart">
+                <button> SignIn/SignUp </button>
+                <img class="login-icon" src="./Images/person-icon.png" alt="" />
+                <img class="cart-icon" src="./Images/cart-icon.png" alt="" />
+                <div class="nav-cart-count">0</div>
+            </div>
+        </div>
+        {% block content %}
+
+    {% endblock %}
+    <script src="{% static 'js/Navbar.js' %}"></script>
+    
+</body>
+</html>

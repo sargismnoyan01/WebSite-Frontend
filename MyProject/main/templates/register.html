@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+
+<div class="form-box">
+    <form class="form" method="post">
+        {% csrf_token %}
+        <span class="title">Sign up</span>
+        <span class="subtitle">Create a free account with your email.</span>
+        {% if messages %}
+        {% for message in messages %}
+        <span class="subtitle" style="color: brown;"><b> {{ message }} </b></span>
+        {% endfor %}
+        {% endif %}
+        <div class="form-container">
+            <input type="text" name="username" class="input" placeholder="Username">
+            <input type="email" name="email" class="input" placeholder="Email">
+            <input type="password" name="password1" class="input" placeholder="Password">
+            <input type="password" name="password2" class="input" placeholder="Repeat password">
+        </div>
+        <button type="submit">Sign up</button>
+    </form>
+    <div class="form-section">
+        <p>Have an account? <a href="">Log in</a></p>
+    </div>
+</div>
+
+</body>
+
+{% endblock %}
+</html>

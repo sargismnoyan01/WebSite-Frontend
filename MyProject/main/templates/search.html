@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Search/search.css">
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
     <title>Search Bar Example</title>
 </head>
 <body>
@@ -11,10 +12,10 @@
         <div class="display-area" id="display-area">Your search term will appear here</div>
         <div class="search-container">
         <input type="text" id="search-input" placeholder="Type to search..." />
-        <img class="search-button" id="search-button" src="../Images/search.png" alt="">
+        <img class="search-button" id="search-button" src="{% static '/Images/search.png' %}" alt="">
     </div>
     </div>
 
-    <script src="search.js"></script>
+    <script src="{% static 'js/search.js' %}"></script>
 </body>
 </html>
