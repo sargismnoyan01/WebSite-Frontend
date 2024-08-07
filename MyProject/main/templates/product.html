@@ -13,6 +13,12 @@
         <hr />
         <div class="product-item" id="product-list"></div>
     </div>
+
+    <!-- Pass product data to JavaScript -->
+    <script type="text/javascript">
+        const productData = {{ product_data|safe }};
+    </script>
+    
     <script src="{% static 'js/product.js' %}" type="module"></script>
 </body>
 </html>

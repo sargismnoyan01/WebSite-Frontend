@@ -5,6 +5,8 @@ from django.views.generic import ListView,DetailView
 from .forms import *
 from django.contrib import messages
 from .models import *
+from django.core.serializers import serialize
+import json
 
 
 
@@ -16,14 +18,16 @@ class HomeListView(ListView):
     def get(self,request):
         category = Category.objects.all()
         subcategory = SubCategory.objects.all()
-        product = MainProduct.objects.all()
+        products = MainProduct.objects.all()
+        product_data = json.loads(serialize('json', products))
 
 
 
         context = {
             'category':category,
             'subcategory':subcategory,
-            'product':product,
+            'product_data':product_data,
+            
                   }
 
 
