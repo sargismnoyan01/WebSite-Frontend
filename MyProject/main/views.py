@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render
 from django.views.generic import ListView,DetailView
 from .forms import *
 from django.contrib import messages
+from .models import *
 
 
 
@@ -13,11 +14,16 @@ class HomeListView(ListView):
 
 
     def get(self,request):
+        category = Category.objects.all()
+        subcategory = SubCategory.objects.all()
+        product = MainProduct.objects.all()
 
 
 
         context = {
-
+            'category':category,
+            'subcategory':subcategory,
+            'product':product,
                   }
 
 
