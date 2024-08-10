@@ -15,14 +15,27 @@ const renderProducts = (Productdata) => {
         const productCard = document.createElement('div');
         productCard.className = 'product-card';
         productCard.innerHTML = `
+            <div class='image'>
             <img src="${product.img}" alt="${product.name}" class="product-image" />
-            <h2>${product.name}</h2>
-            <p>Company: ${product.company}</p>
+            </div>
+            
             <div class='product-prices'>
-                <div class='product-price-new'>${discountedValue(product.price_old, product.discount).toFixed(2)}</div>
-                <div class='product-price-old'>${product.price_old}</div>
+                <div class='product-price-new'>${discountedValue(product.price_old, product.discount).toFixed(2)}$</div>
+                <div class='product-price-old'>${product.price_old}$</div>
                 <img src = "${icon}" alt ="" class ="heart-icon" />
             </div>
+            <h3 class='company-name'> ${product.company}/${product.name}</h3>
+            <div class='stars'>
+                <i class='fa-solid fa-star'></i>
+                <i class='fa-solid fa-star'></i>
+                <i class='fa-solid fa-star'></i>
+                <i class='fa-solid fa-star'></i>
+                <i class='fa-solid fa-star'></i>
+            </div>
+            <div class='buy'>
+                <button>Buy Now</button>
+            </div>
+            
         `;
 
         const productImage = productCard.querySelector('.product-image');

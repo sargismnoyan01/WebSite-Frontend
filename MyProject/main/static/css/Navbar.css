@@ -10,8 +10,11 @@ html{
     height: 100%;
 }
 
+
 .navbar-up{
+    position: fixed;
     display: flex;
+    width: 100%;
     justify-content: space-around;
     padding: 16px;
     box-shadow:0 1px 3px -2px black ;
@@ -198,15 +201,18 @@ a h1 {
     .three-line-icon{
         display: none;
     }
-    body{
-        height: 200px;
-    }
     
     .new-nav{
         position: fixed;
         display: flex;
         background: #151E4B ; 
-        justify-content: space-between;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
+        rgba(0, 73, 144, 0.5) 5px 10px 15px;
+        transition: all 0.5s;
+
         bottom: 0;
         padding: 15px 9%;
         width: 100%;
@@ -215,7 +221,9 @@ a h1 {
     .new-nav img{
         width: 50px;
         height: 50px;
+        
     }
+    
     .nav-login-cart {
         display: none;
     }
@@ -225,12 +233,17 @@ a h1 {
 }
 
 .navbar-down{
+    position: fixed;
+    top: 98px;
+    width: 100%;
+    height: 80px;
     background: #151E6E;
     display: flex;
     align-items: center;
 }
 
 .searchAndIcon{
+    
     display: flex;
     align-items: center;
     margin-left: 150px;
@@ -251,6 +264,7 @@ a h1 {
     font-weight: 500;
     color: aliceblue;
 }
+
 
 
 
