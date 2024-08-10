@@ -5,25 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/Navbar.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fronts/remixicon.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  
     <title>Navbar</title>
 </head>
-<body>
+<body style="height: 100px;">
     <div class="navbar">
         <div class="navbar-up">
             <a style="text-decoration: none;" href="{% url 'home'%}"><h1 style="text-decoration: none; color: white;"> HayClick</h1></a>
             <ul class="nav-menu">
                 <li style="text-decoration: none; color: white;">  New In </li>
                 <li style="text-decoration: none; color: white;"> Stores </li>
-                    <li style="text-decoration: none; color: white;"> Our Mission </li>
+                <li style="text-decoration: none; color: white;"> Our Mission </li>
                 <li style="text-decoration: none; color: white;"> Settings </li>
             </ul>
+
             <div class="nav-login-cart">
                 <button> SignIn/SignUp </button>
                 <img class="login-icon" src="{% static '/Images/person-icon.png' %}" alt="" />
                 <img class="cart-icon" src="{% static './Images/cart-icon.png' %}" alt="" />
                 <div class="nav-cart-count">0</div>
+                
             </div>
+        
+            <div class="bx bx-menu" id="menu-icon"></div>
+            <div class="nav-dropdown" style="display: none;">
+            <ul>
+                <li>some</li>
+                <li>items</li>
+            </ul>
         </div>
+        </div>
+
+       
+        
         {% block content %}
 
     {% endblock %}
@@ -31,3 +50,4 @@
     
 </body>
 </html>
+

@@ -1,8 +1,18 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="min-height: 100%;display:flex; flex-direction: column;"
+             >
+    {% extends 'base.html' %}
 {% block content %}
 {% load static %}
 <div class="navbar-down">
-    <img class="three-line-icon" src="{% static './Images/3line.png' %}" alt="" />
+    <div class="three-line-icon">All</div>
     <div class="dropdown" style="display: none;">
         <ul>
             {% for i in category %}
@@ -19,6 +29,12 @@
 <div width="100%" height="500px">
 {% include 'product.html' %}
 </div>
+<div width = '100%' >
+    {% include 'footer.html' %}
+</div>
 <!-- <iframe src="./Product/product.html" width="100%" height="500px"></iframe> -->
 {% endblock %}
+</body>
+</html>
+
 

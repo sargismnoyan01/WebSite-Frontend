@@ -1,6 +1,6 @@
 // product.js
-const icon = '../Images/heart.png';
-const redIcon = '../Images/red-hearticon.png';
+const icon = 'heart.png';
+const redIcon = 'red-hearticon.png';
 
 const renderProducts = (Productdata) => {
     const productList = document.getElementById('product-list');
