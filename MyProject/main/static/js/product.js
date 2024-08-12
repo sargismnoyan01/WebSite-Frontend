@@ -24,7 +24,7 @@ const renderProducts = (Productdata) => {
                 <div class='product-price-old'>${product.price_old}$</div>
                 <img src = "${icon}" alt ="" class ="heart-icon" />
             </div>
-            <h3 class='company-name'> ${product.company}/${product.name}</h3>
+            <h3 class='company-name'> ${product.company.name}/${product.name}</h3>
             <div class='stars'>
                 <i class='fa-solid fa-star'></i>
                 <i class='fa-solid fa-star'></i>

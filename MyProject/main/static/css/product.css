@@ -21,12 +21,14 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 40px;
+    
+
 }
 
 .product-card{
     /* position: relative; */
     background-color: #f7f6f9;
-    width: 350px;
+    width: 300px;
     height: 100%;
     box-shadow: 0 5px 20px rgb(0,0,0,.3);
     display: flex;
@@ -36,6 +38,7 @@
     border-radius: 10px;
     transition: .3s;
     cursor: pointer;
+    z-index: 1;
 
 }
 
@@ -53,13 +56,14 @@
 
 .image img{
     width: 240px;
+    height: 200px;
 }
 
 .product-prices{
     width: 100%;
     margin-top: 15px;
     display: flex;
-    justify-content: space-between;
+    gap: 30px;
 }
 
 
@@ -86,14 +90,14 @@
 }
 
 .stars{
-    font-size: 1.3em;
+    font-size: 16px;
     margin-top: 10px;
     color: #f67034;
 
 }
 /* #1b2741  #f7f6f9*/
 .buy{
-    position: absolute;
+    visibility: hidden;
     bottom: 20px;
     right: 20px;
 
@@ -109,8 +113,158 @@
     text-transform: capitalize;
     cursor: pointer;
     transition: .5s;
+    margin-top: 20px;
 }
 
 .buy button:hover{
     transform: scale(1.1);
+}
+
+.product-card:hover .buy{
+    visibility: visible;
+}
+
+@media only screen and (max-width: 640px  ){
+    .product-card{
+        width: 280px;
+        height: 400px;
+    }
+    .image img{
+        width: 230px;
+    }
+}
+
+@media only screen and (max-width: 600px  ){
+    .product-card{
+        width: 250px;
+        height: 400px;
+    }
+    .image img{
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 540px  ){
+    .product-card{
+        width: 220px;
+        height: 400px;
+    }
+    .image img{
+        width: 170px;
+    }
+    .buy button{
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px  ){
+    .product-card{
+        width: 200px;
+        height: 400px;
+        gap: 15px;
+    }
+    .image img{
+        width: 150px;
+        height: 180px;
+    }
+    .product-price-new{
+        font-size: 14px;
+    }
+    .product-price-old{
+        font-size: 13px;
+    }
+    .stars{
+        font-size: 15px;
+        margin-top: 0;
+    }
+    .company-name{
+        margin-top: 0;
+        font-size: 15px;
+    }
+    .buy button{
+    }
+}
+
+@media only screen and (max-width: 460px  ){
+    .product-card{
+        width: 180px;
+        height: 350px;
+        gap: 15px;
+    }
+    .image img{
+        width: 130px;
+        height: 160px;
+        margin-bottom: 10px;
+    }
+    .company-name{
+        margin-top: 0;
+        font-size: 15px;
+    }
+    .buy button{
+        padding: 5px 20px ;
+        margin-top: -10px;
+    }
+}
+
+@media only screen and (max-width: 400px  ){
+    .product-card{
+        width: 160px;
+        height: 310px;
+        gap: 10px;
+    }
+    .image img{
+        width: 110px;
+        height: 140px;
+    }
+    .company-name{
+        font-size: 13px;
+    }
+    .buy button{
+        font-size: 14px;
+        margin-top: -10px;
+    }
+    .product-price-new{
+        font-size: 12px;
+    }
+    .product-price-old{
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 360px  ){
+    .product-card{
+        width: 250px;
+        height: 310px;
+        gap: 10px;
+    }
+    .image img{
+        width: 200px;
+        height: 160px;
+    }
+    .company-name{
+        font-size: 14px;
+    }
+    .buy button{
+        font-size: 15px;
+        margin-top: -10px;
+    }
+    .product-price-new{
+        font-size: 13px;
+    }
+    .product-price-old{
+        font-size: 12px;
+    }
+}
+
+
+@media only screen and (max-width: 310px  ){
+    .product-item{
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 275px  ){
+    .product-item{
+        margin-left: 10px;
+    }
 }

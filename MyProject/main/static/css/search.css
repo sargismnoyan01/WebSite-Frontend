@@ -25,7 +25,7 @@ body {
 #search-input {
     padding: 10px;
     height: 25px;
-    width: 400px; /* Set a width for the input */
+    width: 400px;
     border: 1px solid #ccc; /* Border style */
     border-radius: 30px; /* Rounded corners */
     margin-top: 15px;
@@ -38,11 +38,17 @@ body {
     .searchBar-container{
         margin-left: 300px;
     }
+    .display-area{
+        margin-left: 0;
+    }
 }
 
 @media only screen and (max-width: 960px){
     .searchBar-container{
         margin-left: 200px;
+    }
+    .display-area{
+        margin-left: 0;
     }
 }
 
@@ -50,11 +56,17 @@ body {
     .searchBar-container{
         margin-left: 140px;
     }
+    .display-area{
+        margin-left: 0;
+    }
 }
 
 @media only screen and (max-width: 670px){
     .searchBar-container{
         margin-left: 100px;
+    }
+    .display-area{
+        margin-left: 0;
     }
 }
 
@@ -62,10 +74,133 @@ body {
     .searchBar-container{
         margin-left: 60px;
     }
+    .display-area{
+        margin-left: 0;
+    }
 }
 
 @media only screen and (max-width: 589px){
     .searchBar-container{
         align-items: center;
+    }
+    .display-area{
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 520px){
+    .searchBar-container{
+        margin-left: 40px;
+    }
+    .display-area{
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .searchBar-container{
+        margin-left: 30px;
+    }
+    .display-area{
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .searchBar-container{
+        margin-left: 20px;
+    }
+    .display-area{
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 460px){
+    .searchBar-container{
+        margin-left: 10px;
+    }
+    .display-area{
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .searchBar-container{
+        width: 390px;
+        margin-left: 40px;
+    }
+    .display-area{
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 430px){
+    .searchBar-container{
+        width: 370px;
+        margin-left: 40px;
+    }
+    .display-area{
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 410px){
+    .searchBar-container{
+        width: 350px;
+        margin-left: 40px;
+    }
+    .display-area{
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 390px){
+    .searchBar-container{
+
+        width: 330px;
+        margin-left: 40px;
+    }
+    .display-area{
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 370px){
+    .searchBar-container{
+        width: 310px;
+        margin-left: 40px;
+    }
+    .display-area{
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 350px){
+    .searchBar-container{
+        width: 290px;
+        margin-left: 40px;
+    }
+    .display-area{
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 330px){
+    .searchBar-container{
+        width: 270px;
+        margin-left: 40px;
+    }
+    .display-area{
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 310px){
+    .searchBar-container{
+        width: 250px;
+        margin-left: 40px;
+    }
+    .display-area{
+        margin-left: 0;
     }
 }
