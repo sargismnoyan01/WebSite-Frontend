@@ -23,13 +23,15 @@
                 <li style="text-decoration: none; color: white;"> Our Mission </li>
                 <li style="text-decoration: none; color: white;"> Settings </li>
             </ul>
-
             <div class="nav-login-cart">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}"><button> {{ user }}</button></a>
+                {% else %}
                 <a href="{% url 'register' %}"><button> SignIn/SignUp </button></a>
                 <img class="login-icon" src="{% static '/Images/person-icon.png' %}" alt="" />
                 <img class="cart-icon" src="{% static './Images/cart-icon.png' %}" alt="" />
                 <div class="nav-cart-count">0</div>
-                
+                {% endif %}
             </div>
         
             <div class="bx bx-menu" id="menu-icon"></div>
