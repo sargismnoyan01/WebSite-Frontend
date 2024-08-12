@@ -19,13 +19,13 @@ body {
     font-size: 16px;
     color: white; /* Text color */
     margin-top: 20px; 
-    margin-left: 80px;
+    margin-left: 180px;
 }
 
 #search-input {
     padding: 10px;
-    height: 25px;
-    width: 400px;
+    height: 50px;
+    width: 600px;
     border: 1px solid #ccc; /* Border style */
     border-radius: 30px; /* Rounded corners */
     margin-top: 15px;
