@@ -86,11 +86,14 @@ def LogoutPage(request):
 
 
 class ProductDetailView(DetailView):
-    model =   # Specify your model here
-    template_name = 'detail.html'  # Your detail template
-    context_object_name = 'product'  # The name of the object in the context
+    template_name = 'detail.html' 
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        # Add any additional context data if needed
-        return context    
+    def get(self,request,id):
+        product=MainProduct.objects.get(pk=id)
+
+        context = {
+            'product':product,
+
+                  }
+        
+        return render(request,self.template_name,context)
