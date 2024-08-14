@@ -25,11 +25,10 @@
             </ul>
             <div class="nav-login-cart">
                 {% if user.is_authenticated %}
-                    <a href="{% url 'logout
-                    ' %}"><button> {{ user }}</button></a>
+                    <a href="{% url 'logout' %}"><button> {{ user }}</button></a>
                 {% else %}
-                <a href="{% url 'register' %}"><button> SignIn/SignUp </button></a>
-                <img class="login-icon" src="{% static '/Images/person-icon.png' %}" alt="" />
+                <a href="{% url 'login' %}"><button> SignIn/SignUp </button></a>
+                <a href="{% url 'login' %}"><img class="login-icon"  src="{% static '/Images/person-icon.png' %}" alt="" /></a>
                 <img class="cart-icon" src="{% static './Images/cart-icon.png' %}" alt="" />
                 <div class="nav-cart-count">0</div>
                 {% endif %}

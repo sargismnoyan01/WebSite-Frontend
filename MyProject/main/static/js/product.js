@@ -16,7 +16,7 @@ const renderProducts = (Productdata) => {
         productCard.className = 'product-card';
         productCard.innerHTML = `
             <div class='image'>
-            <img src="${product.img}" alt="${product.name}" class="product-image" />
+            <a href="{% templates 'detail.html' %}"><img src="${product.img}" alt="${product.name}" class="product-image" /></a>
             </div>
             
             <div class='product-prices'>
@@ -24,7 +24,7 @@ const renderProducts = (Productdata) => {
                 <div class='product-price-old'>${product.price_old}$</div>
                 <img src = "${icon}" alt ="" class ="heart-icon" />
             </div>
-            <h3 class='company-name'> ${product.company}/${product.name}</h3>
+            <h3 class='company-name'> ${product.company.name}/${product.name}</h3>
             <div class='stars'>
                 <i class='fa-solid fa-star'></i>
                 <i class='fa-solid fa-star'></i>

@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cartCount = document.querySelector('.nav-cart-count');
     const threeLineIcon = document.querySelector('.three-line-icon');
     const dropdown = document.querySelector('.dropdown');
+    const person_icon = document.querySelector('.login-icon')
     
     let user = null; 
     let openCategoryMenu = false;
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const isVisible = nav_dropdown.style.display === 'block';
         nav_dropdown.style.display = isVisible ? 'none' : 'block';
     })
+
 });
 
 
