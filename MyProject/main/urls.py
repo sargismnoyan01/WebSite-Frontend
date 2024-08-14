@@ -7,6 +7,6 @@ urlpatterns = [
     path('register/',RegisterDetailView.as_view(),name='register'),
     path('login/',LoginPage,name='login'),
     path('logout/',LogoutPage,name='logout'),
-
+    path('detail/',DetailPage,name='detail'),
     
 ]

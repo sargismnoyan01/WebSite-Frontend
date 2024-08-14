@@ -16,7 +16,7 @@ const renderProducts = (Productdata) => {
         productCard.className = 'product-card';
         productCard.innerHTML = `
             <div class='image'>
-            <img src="${product.img}" alt="${product.name}" class="product-image" />
+            <a href="{% templates 'detail.html' %}"><img src="${product.img}" alt="${product.name}" class="product-image" /></a>
             </div>
             
             <div class='product-prices'>
