@@ -59,7 +59,17 @@
     width: 240px;
     height: 200px;
 }
-
+.heart-icon{
+    position: absolute;
+    margin-bottom: 160px;
+    margin-left: 200px;
+}
+.red-heart-icon{
+    position: absolute;
+    display: none;
+    margin-bottom: 160px;
+    margin-left: 200px;
+}
 .product-prices{
     width: 100%;
     margin-top: 15px;
@@ -96,7 +106,6 @@
     color: #f67034;
 
 }
-/* #1b2741  #f7f6f9*/
 .buy{
     visibility: hidden;
     bottom: 20px;

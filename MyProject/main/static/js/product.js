@@ -1,65 +1,59 @@
-// product.js
-const icon = 'heart.png';
-const redIcon = 'red-hearticon.png';
+const icon = '../static/Images/heart.png'; // Path to the default heart icon
+const redIcon = '../static/Images/red-hearticon.png'
 
 const renderProducts = (Productdata) => {
     const productList = document.getElementById('product-list');
-    productList.innerHTML = '';
+    const productTemplate = productList.querySelector('.product-card');
 
-    const discountedValue = (price, dis) => {
-        return price - (price * (dis / 100));
-    };
+    productList.innerHTML = ''; // Clear the template
 
     Productdata.forEach(item => {
         const product = item.fields;
-        const productCard = document.createElement('div');
-        productCard.className = 'product-card';
-        productCard.innerHTML = `
-            <div class='image'>
-            <img src="${product.img}" alt="${product.name}" class="product-image" />
-            </div>
-            
-            <div class='product-prices'>
-                <div class='product-price-new'>${discountedValue(product.price_old, product.discount).toFixed(2)}$</div>
-                <div class='product-price-old'>${product.price_old}$</div>
-                <img src = "${icon}" alt ="" class ="heart-icon" />
-            </div>
-            <h3 class='company-name'> ${product.company.name}/${product.name}</h3>
-            <div class='stars'>
-                <i class='fa-solid fa-star'></i>
-                <i class='fa-solid fa-star'></i>
-                <i class='fa-solid fa-star'></i>
-                <i class='fa-solid fa-star'></i>
-                <i class='fa-solid fa-star'></i>
-            </div>
-            <div class='buy'>
-                <a href="{% url 'detail' ${product.id} %}"><button>Buy Now</button></a>
-             </div>
-            
-        `;
 
+        // Clone the template for each product
+        const productCard = productTemplate.cloneNode(true);
+
+        // Select the relevant elements
         const productImage = productCard.querySelector('.product-image');
+        const newPrice = productCard.querySelector('.product-price-new');
+        const oldPrice = productCard.querySelector('.product-price-old');
+        const companyName = productCard.querySelector('.company-name');
         const heartIcon = productCard.querySelector('.heart-icon');
+        const red_heartIcon = productCard.querySelector('.red-heart-icon');
+        const buyLink = productCard.querySelector('.buy a');
 
+        // Populate the elements with dynamic data
+        productImage.src = product.img;
+        productImage.alt = product.name;
+        newPrice.textContent = `${(product.price_old - product.price_old * (product.discount / 100)).toFixed(2)}$`;
+        oldPrice.textContent = `${product.price_old}$`;
+        companyName.textContent = `${product.company_name}/${product.id}`;
+        buyLink.href = `/detail/?id=${product.company}`;
+
+        // Event listeners for image hover effect
         productImage.addEventListener('mouseenter', () => {
-            productImage.src = `${product.image_2}`;
+            productImage.src = product.image_2;
         });
 
         productImage.addEventListener('mouseleave', () => {
-            productImage.src = `${product.img}`;
+            productImage.src = product.img;
         });
 
+        // Event listener to toggle heart icon
         heartIcon.addEventListener('click', () => {
-            if (heartIcon.src.includes('heart.png')) {
-                heartIcon.src = redIcon;
-            } else {
-                heartIcon.src = icon;
-            }
+            red_heartIcon.style.display = 'block'
+            heartIcon.style.display = 'none'
+        });
+        red_heartIcon.addEventListener('click', () => {
+            heartIcon.style.display = 'block'
+            red_heartIcon.style.display = 'none'
         });
 
+        // Append the product card to the list
         productList.appendChild(productCard);
     });
 };
 
-// Use the dynamic data
+// Execute the render function with the provided product data
 renderProducts(productData);
+
