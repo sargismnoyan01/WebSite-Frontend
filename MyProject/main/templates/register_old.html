@@ -12,20 +12,28 @@
 <body>
 
     /* From Uiverse.io by akshat-patel28 */ 
-    <div class="area-form">
     <div class="form-container">
-         <p class="title">Welcome back</p>
+         <p class="title">Welcome</p>
+         {% if messages %}
+         {% for message in messages %}
+         <p style="color: brown;" >{{ message }}</p><br>
+        {% endfor %}
+        {% endif %}
          <form class="form" method="post">
           {% csrf_token %}
-           <input type="username" name="username" class="input" placeholder="Username">
-           <input type="password" class="input" name="password" placeholder="Password">
+          <input type="text" name="username" class="input" placeholder="Username">
+          <input type="text" name="phone_number" class="input" placeholder="Phone number">
+           <input type="email" class="input" name="email" placeholder="Email">
+           <input type="password" class="input" name="password1" placeholder="Password">
+           <input type="password" class="input" name = "password2" placeholder="Reset password">
            <p class="page-link">
              <span class="page-link-label">Forgot Password?</span>
            </p>
-           <button class="form-btn" type="submit">Log in</button>
+
+           <button class="form-btn" type="submit">Register</button>
          </form>
          <p class="sign-up-label">
-          <a href="{% url 'register' %}"> Don't have an account?<span class="sign-up-link" >Sign up</span></a>
+           <a href="{% url 'login' %}"><span class="sign-up-link">Login</span></a>
          </p>
          <div class="buttons-container">
            <div class="apple-login-button">
@@ -50,7 +58,6 @@
            </div>
          </div>
        </div>
-      </div>
 
 </body>
 
