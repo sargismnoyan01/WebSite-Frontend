@@ -2,6 +2,7 @@ const icon = '../static/Images/heart.png'; // Path to the default heart icon
 const redIcon = '../static/Images/red-hearticon.png'
 
 const renderProducts = (Productdata) => {
+    console.log(product)
     const productList = document.getElementById('product-list');
     const productTemplate = productList.querySelector('.product-card');
 
