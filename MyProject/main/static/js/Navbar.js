@@ -4,8 +4,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const navMenuItems = document.querySelectorAll('.nav-menu li');
     const cartCount = document.querySelector('.nav-cart-count');
     const threeLineIcon = document.querySelector('.three-line-icon');
-    const dropdown = document.querySelector('.dropdown');
     const person_icon = document.querySelector('.login-icon')
+    const loginIcon = document.querySelector('.login-icon');
+    const dropdown = document.querySelector('.login-dropdown');
+
+    if (loginIcon) {
+        loginIcon.addEventListener('click', function() {
+            if (dropdown.style.display === 'none' || dropdown.style.display === '') {
+                dropdown.style.display = 'block';
+                dropdown.style.opacity = 1;
+                dropdown.style.visibility = 'visible'
+            } else {
+                dropdown.style.display = 'none';
+            }
+        });
+    }
     
     let user = null; 
     let openCategoryMenu = false;

@@ -14,18 +14,21 @@
     <div class="product" style="margin-top: 250px; margin-bottom: 200px;">
         <h1>POPULAR IN OUR STORE</h1>
         <hr />
+
         <div class="product-item" id="product-list">
+            {% for i in products %}
             <div class="product-card">
                 <div class="image">
-                    <img src="" alt="Product Name" class="product-image" />
+                    <img src="{{ i.img.url }}" alt="Product Name" class="product-image" />
                     <img src='../static/Images/heart.png' alt="" class="heart-icon" style="width: 35px; height: 35px"/>
                     <img src='../static/Images/red-hearticon.png' alt="" class="red-heart-icon" style="width: 35px; height: 35px"/>
                 </div>
+
                 <div class="product-prices">
-                    <div class="product-price-new">New Price</div>
-                    <div class="product-price-old">Old Price</div>
+                    <div class="product-price-new">{{ i.price_now }}</div>
+                    <div class="product-price-old">{{ i.price_old }}</div>
                 </div>
-                <h3 class="company-name">Company Name/ID</h3>
+                <h3 class="company-name">{{ i.company }}</h3>
                 <div class="stars">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -34,17 +37,18 @@
                     <i class="fa-solid fa-star"></i>
                 </div>
                 <div class="buy">
-                    <a href="{% url 'detail' 1 %}">
+                    <a href="{% url 'detail' i.id %}">
                         <button>Buy Now</button>
                     </a>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 
     <!-- Pass product data to JavaScript -->
     <script type="text/javascript">
-        const productData = {{ product_data|safe }};  
+        const productData = {{ product | safe }};  
     </script>
     
     <script src="{% static 'js/product.js' %}" type="module"></script>

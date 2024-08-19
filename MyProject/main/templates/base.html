@@ -25,8 +25,14 @@
             </ul>
             <div class="nav-login-cart">
                 {% if user.is_authenticated %}
-                    <a href="{% url 'logout' %}"><button> {{ user }}</button></a>
+                    <a href=""> <p style="color: white; font-size:20px">{{ user }}</p></a>
                     <a href="#"><img class="login-icon"  src="{% static '/Images/person-icon.png' %}" alt="" /></a>
+                    <div class="login-dropdown"  >
+                    <ul class="dropdown-ul">
+                        <a href="#"><li>Saved</li></a>
+                        <a href="{% url 'logout' %}"><li>Logout</li></a>
+                    </ul>
+                    </div>
                     <img class="cart-icon" src="{% static './Images/cart-icon.png' %}" alt="" />
                     <div class="nav-cart-count">0</div>
 

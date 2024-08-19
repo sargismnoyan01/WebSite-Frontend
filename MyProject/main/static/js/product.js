@@ -1,60 +1,48 @@
-const icon = '../static/Images/heart.png'; // Path to the default heart icon
-const redIcon = '../static/Images/red-hearticon.png'
+document.addEventListener('DOMContentLoaded', function () {
+    const productCards = document.querySelectorAll('.product-card');
 
-const renderProducts = (Productdata) => {
-    console.log(product)
-    const productList = document.getElementById('product-list');
-    const productTemplate = productList.querySelector('.product-card');
+    productCards.forEach((card) => {
+        const heartIcon = card.querySelector('.heart-icon');
+        const redHeartIcon = card.querySelector('.red-heart-icon');
+        const productId = card.getAttribute('data-id');
+        const productName = card.querySelector('.company-name').innerText;
+        const productPriceNew = card.querySelector('.product-price-new').innerText;
+        const productPriceOld = card.querySelector('.product-price-old').innerText;
+        const productImage = card.querySelector('.product-image').getAttribute('src');
 
-    productList.innerHTML = ''; // Clear the template
+        // Load saved products from local storage
+        let savedProducts = JSON.parse(localStorage.getItem('savedProducts')) || [];
 
-    Productdata.forEach(item => {
-        const product = item.fields;
+        // If product is already saved, show the red heart icon
+        if (savedProducts.some(p => p.id === productId)) {
+            heartIcon.style.display = 'none';
+            redHeartIcon.style.display = 'block';
+        }
 
-        // Clone the template for each product
-        const productCard = productTemplate.cloneNode(true);
+        // Event listener for the heart icon (adding to saved)
+        heartIcon.addEventListener('click', function () {
+            this.style.display = 'none';
+            redHeartIcon.style.display = 'block';
 
-        // Select the relevant elements
-        const productImage = productCard.querySelector('.product-image');
-        const newPrice = productCard.querySelector('.product-price-new');
-        const oldPrice = productCard.querySelector('.product-price-old');
-        const companyName = productCard.querySelector('.company-name');
-        const heartIcon = productCard.querySelector('.heart-icon');
-        const red_heartIcon = productCard.querySelector('.red-heart-icon');
-        const buyLink = productCard.querySelector('.buy a');
+            const product = {
+                id: productId,
+                name: productName,
+                priceNow: productPriceNew,
+                priceOld: productPriceOld,
+                image: productImage
+            };
 
-        // Populate the elements with dynamic data
-        productImage.src = product.img;
-        productImage.alt = product.name;
-        newPrice.textContent = `${(product.price_old - product.price_old * (product.discount / 100)).toFixed(2)}$`;
-        oldPrice.textContent = `${product.price_old}$`;
-        companyName.textContent = `${product.company_name}/${product.id}`;
-        buyLink.href = `/detail/?id=${product.company}`;
-
-        // Event listeners for image hover effect
-        productImage.addEventListener('mouseenter', () => {
-            productImage.src = product.image_2;
+            savedProducts.push(product);
+            localStorage.setItem('savedProducts', JSON.stringify(savedProducts));
         });
 
-        productImage.addEventListener('mouseleave', () => {
-            productImage.src = product.img;
-        });
+        // Event listener for the red heart icon (removing from saved)
+        redHeartIcon.addEventListener('click', function () {
+            this.style.display = 'none';
+            heartIcon.style.display = 'block';
 
-        // Event listener to toggle heart icon
-        heartIcon.addEventListener('click', () => {
-            red_heartIcon.style.display = 'block'
-            heartIcon.style.display = 'none'
+            savedProducts = savedProducts.filter(p => p.id !== productId);
+            localStorage.setItem('savedProducts', JSON.stringify(savedProducts));
         });
-        red_heartIcon.addEventListener('click', () => {
-            heartIcon.style.display = 'block'
-            red_heartIcon.style.display = 'none'
-        });
-
-        // Append the product card to the list
-        productList.appendChild(productCard);
     });
-};
-
-// Execute the render function with the provided product data
-renderProducts(productData);
-
+});

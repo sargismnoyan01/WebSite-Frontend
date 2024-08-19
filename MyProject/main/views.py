@@ -22,6 +22,9 @@ class HomeListView(ListView):
         subcategory = SubCategory.objects.all()
         products = MainProduct.objects.all()
         product_data = json.loads(serialize('json', products))
+        price_now = 0
+        for i in products:
+            i.price_now = i.price_old - ((i.price_old/100) * i.discount)
 
 
 
@@ -29,7 +32,7 @@ class HomeListView(ListView):
             'category':category,
             'subcategory':subcategory,
             'product_data':product_data,
-            
+            'products':products,
                   }
 
 
@@ -86,14 +89,14 @@ def LogoutPage(request):
 
 
 class ProductDetailView(DetailView):
+    
     template_name = 'detail.html' 
 
     def get(self,request,id):
-        product=MainProduct.objects.get(pk=id)
+        product=MainProduct.objects.get(id = id)
 
         context = {
             'product':product,
-
                   }
         
         return render(request,self.template_name,context)
