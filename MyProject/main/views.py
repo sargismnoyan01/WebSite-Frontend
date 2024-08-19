@@ -112,3 +112,14 @@ class ProductDetailView(DetailView):
                   }
         
         return render(request,self.template_name,context)
+    
+
+class SavePageListView(ListView):
+    template_name = 'saved.html'
+
+    def get(self,request):
+        context = {
+
+                  }
+
+        return render(request,self.template_name,context)

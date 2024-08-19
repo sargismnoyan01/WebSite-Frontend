@@ -8,4 +8,6 @@ urlpatterns = [
     path('login/',LoginPage,name='login'),
     path('logout/',LogoutPage,name='logout'),
     path('detail/<int:id>/',ProductDetailView.as_view(),name='detail'),
+    path('saves/',SavePageListView.as_view(),name='savepage'),
+    
 ]
