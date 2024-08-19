@@ -16,17 +16,17 @@
         <hr />
 
         <div class="product-item" id="product-list">
-            {% for i in products %}
+            {% for i in data %}
             <div class="product-card">
                 <div class="image">
-                    <img src="{{ i.img.url }}" alt="Product Name" class="product-image" />
+                    <img src="{{ i.img_url.url }}" alt="Product Name" class="product-image" />
                     
                     <img src='../static/Images/heart.png' alt="" class="heart-icon" style="width: 35px; height: 35px"/>
                     <img src='../static/Images/red-hearticon.png' alt="" class="red-heart-icon" style="width: 35px; height: 35px"/>
                 </div>
 
                 <div class="product-prices">
-                    <div class="product-price-new">{{ i.price_now }}</div>
+                    <div class="product-price-new">{{ i.Description }}</div>
                     <div class="product-price-old">{{ i.price_old }}</div>
                 </div>
                 <h3 class="company-name">{{ i.company }}</h3>
@@ -38,9 +38,10 @@
                     <i class="fa-solid fa-star"></i>
                 </div>
                 <div class="buy">
-                    <a href="{% url 'detail' i.id %}">
+                  {% comment %}  <a href="{% url 'detail' i.id %}">
                         <button>Buy Now</button>
                     </a>
+                {% endcomment %}
                 </div>
             </div>
             {% endfor %}
