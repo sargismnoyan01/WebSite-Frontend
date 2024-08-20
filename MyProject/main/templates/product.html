@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="product-prices">
-                    <div class="product-price-new">{{ i.price_now }}</div>
+                    <div class="product-price-new">{{ i.Description }}</div>
                     <div class="product-price-old">{{ i.price_old }}</div>
                 </div>
                 <h3 class="company-name">{{ i.company }}</h3>
@@ -38,9 +38,10 @@
                     <i class="fa-solid fa-star"></i>
                 </div>
                 <div class="buy">
-                    <a href="{% url 'detail' i.id %}">
+                   <a href="{% url 'detail' i.id %}">
                         <button>Buy Now</button>
                     </a>
+               
                 </div>
             </div>
             {% endfor %}

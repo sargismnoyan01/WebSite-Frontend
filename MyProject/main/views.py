@@ -8,6 +8,10 @@ from .models import *
 from django.core.serializers import serialize
 import json
 from django.contrib.auth import authenticate,login,logout
+import json
+import os
+
+
 
 
 
@@ -18,6 +22,12 @@ class HomeListView(ListView):
 
 
     def get(self,request):
+        file_path = os.path.join(os.path.dirname(__file__), 'products_data.json')
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        
+
         category = Category.objects.all()
         subcategory = SubCategory.objects.all()
         products = MainProduct.objects.all()
@@ -25,10 +35,12 @@ class HomeListView(ListView):
         price_now = 0
         for i in products:
             i.price_now = i.price_old - ((i.price_old/100) * i.discount)
+        
 
 
 
         context = {
+            'data':data,
             'category':category,
             'subcategory':subcategory,
             'product_data':product_data,
@@ -99,4 +111,15 @@ class ProductDetailView(DetailView):
             'product':product,
                   }
         
+        return render(request,self.template_name,context)
+    
+
+class SavePageListView(ListView):
+    template_name = 'saved.html'
+
+    def get(self,request):
+        context = {
+
+                  }
+
         return render(request,self.template_name,context)

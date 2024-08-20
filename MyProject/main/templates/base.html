@@ -13,25 +13,31 @@
   
     <title>Navbar</title>
 </head>
-<body style="height: 100px;">
+<body style="height: 60px;">
     <div class="navbar">
         <div class="navbar-up">
             <a style="text-decoration: none;" href="{% url 'home'%}"><h1 style="text-decoration: none; color: white;"> HayClick</h1></a>
             <ul class="nav-menu">
-                <li style="text-decoration: none; color: white;">  New In </li>
-                <li style="text-decoration: none; color: white;"> Stores </li>
-                <li style="text-decoration: none; color: white;"> Our Mission </li>
-                <li style="text-decoration: none; color: white;"> Settings </li>
+                <li class="nav-menu-item" style="text-decoration: none; color: white;">  New In </li>
+                <li class="nav-menu-item" style="text-decoration: none; color: white;"> Stores </li>
+                <li class="nav-menu-item" style="text-decoration: none; color: white;"> Our Mission </li>
+                <li class="nav-menu-item" style="text-decoration: none; color: white;"> Settings </li>
             </ul>
             <div class="nav-login-cart">
                 {% if user.is_authenticated %}
-                    <a href="{% url 'logout' %}"><button> {{ user }}</button></a>
-                    <a href="#"><img class="login-icon"  src="{% static '/Images/person-icon.png' %}" alt="" /></a>
+                    <a href=""> <p style="color: white; font-size:20px">{{ user }}</p></a>
+                    <a href=""><img class="login-icon"  src="{% static '/Images/person-icon.png' %}" alt="" /></a>
+                    <div class="login-dropdown"  >
+                    <ul class="dropdown-ul">
+                        <a href="{% url 'savepage' %}"><li>Saved</li></a>
+                        <a href="{% url 'logout' %}"><li>Logout</li></a>
+                    </ul>
+                    </div>
                     <img class="cart-icon" src="{% static './Images/cart-icon.png' %}" alt="" />
                     <div class="nav-cart-count">0</div>
 
                 {% else %}
-                <a href="{% url 'login' %}"><button> SignIn/SignUp </button></a>
+                <a href="{% url 'login' %}"><button>Sign In</button></a>
                 <a href="{% url 'login' %}"><img class="login-icon"  src="{% static '/Images/person-icon.png' %}" alt="" /></a>
                 <a href="{% url 'login' %}"><img class="cart-icon" src="{% static './Images/cart-icon.png' %}" alt="" /></a>
                 <div class="nav-cart-count">0</div>
