@@ -134,6 +134,38 @@
     visibility: visible;
 }
 
+
+/* Pagination part */
+
+.pagination{
+    /* background-color: red; */
+    display: flex;
+   padding: 12px 0;
+    justify-content: space-around;
+}
+
+.pagination-div{
+    /* border: 1px solid blue; */
+    display: flex;
+    width: 150px;
+    justify-content: space-around;
+}
+
+.arrow-icon {
+    font-size: 24px;
+    color: lightgray;
+    transition: color 0.3s, transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.arrow-icon:hover{
+    color: #1510aa;
+    transform: scale(2px);
+    /* transform: rotate(20deg); */
+}
+
+
+
 @media only screen and (max-width: 640px  ){
     .product-card{
         width: 280px;
